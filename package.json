@@ -1,7 +1,7 @@
 {
-  "name": "simple-node-typescript-starter",
+  "name": "typewiz-classifier",
   "version": "1.0.0",
-  "description": "a typescript boilerplate based on best practices and tricks 🦄",
+  "description": "a typescript interface predictor",
   "main": "index.js",
   "author": "Pavel 'PK' Kaminsky <kaminsky.pavel@gmail.com> (http://www.pavel-kaminsky.com)",
   "license": "ISC",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "ts-node-dev src/index.ts",
+    "start": "ts-node-dev src/importJsonToMongo.ts",
     "format": "prettier --write src/**/*.{json,ts}",
     "lint": "tslint --project .",
     "test": "yarn lint && jest",
@@ -23,6 +23,7 @@
   },
   "homepage": "www.pavel-kaminsky.com",
   "dependencies": {
+    "@phenomnomnominal/tsquery": "^2.0.0-beta.4",
     "chalk": "^2.4.1",
     "ejs": "^2.6.1",
     "es6-promise": "^4.2.4",
