@@ -36,4 +36,4 @@ build/
 /src/config/config.json
 /src/config/all.json
 
-/src/typescript-interfaces.json
+typescript-interfaces.json

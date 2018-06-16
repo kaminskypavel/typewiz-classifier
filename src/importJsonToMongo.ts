@@ -2,7 +2,7 @@ import {createReadStream} from 'fs';
 import {createInterface} from 'readline';
 
 const lineReader = createInterface({
-	input: createReadStream(`${__dirname}/typescript-interfaces.json`)
+	input: createReadStream(`typescript-interfaces.json`)
 });
 
 lineReader.on('line', (datasetEntry) => {
