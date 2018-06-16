@@ -18,8 +18,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:debug": "node --debug-brk --inspect ./node_modules/jest/bin/jest.js --runInBand",
-    "precommit": "lint-staged",
-    "prepush": "npm run build"
+    "precommit": "lint-staged"
   },
   "homepage": "www.pavel-kaminsky.com",
   "dependencies": {
@@ -71,7 +70,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn format && yarn test && yarn build"
+      "pre-push": "yarn format && yarn test"
     }
   },
   "lint-staged": {
