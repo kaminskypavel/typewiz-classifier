@@ -9,7 +9,7 @@ export interface Interfaces {
 
 export interface IParsedInterface {
 	name: string;
-	structure: [IParsedInterface | IParsedFeature];
+	structure: IParsedFeature[];
 }
 
 export interface IParsedFeature {
