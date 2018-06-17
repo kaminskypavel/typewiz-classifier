@@ -9,3 +9,15 @@
 
 ## Tools
 * https://tsquery-playground.firebaseapp.com/
+
+
+## Useful Queries
+### rawinterfaces
+
+* <b> find intefaces with comments</b> 
+`db.getCollection('rawinterfaces')
+	.find({'declaration.raw':/\*/})`
+	
+* <b> find very short intefaces</b> 
+`db.getCollection('rawinterfaces').find({ $where: 'this.declaration.raw.length < 20' }).limit(10);`
+	
