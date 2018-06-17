@@ -12,31 +12,43 @@ Object {
   "name": "Example2",
   "structure": Array [
     Object {
-      "kind": "number",
+      "kind": Array [
+        "number",
+        "string[]",
+        "Pizza",
+      ],
       "name": "requestId",
       "question": false,
       "stem": "requestid",
     },
     Object {
-      "kind": "string[]",
+      "kind": Array [
+        "string[]",
+      ],
       "name": "orderedDependencies",
       "question": true,
       "stem": "ordereddepend",
     },
     Object {
-      "kind": "{[id:string]:string}",
+      "kind": Array [
+        "{[id:string]:string}",
+      ],
       "name": "dependencyUrls",
       "question": true,
       "stem": "dependencyurl",
     },
     Object {
-      "kind": "string",
+      "kind": Array [
+        "string",
+      ],
       "name": "javaScript",
       "question": true,
       "stem": "javascript",
     },
     Object {
-      "kind": "any[]",
+      "kind": Array [
+        "any[]",
+      ],
       "name": "paramValues",
       "question": false,
       "stem": "paramvalu",
@@ -50,37 +62,49 @@ Object {
   "name": "Example3",
   "structure": Array [
     Object {
-      "kind": "boolean",
+      "kind": Array [
+        "boolean",
+      ],
       "name": "allowSort",
       "question": true,
       "stem": "allowsort",
     },
     Object {
-      "kind": "string",
+      "kind": Array [
+        "string",
+      ],
       "name": "fieldName",
       "question": false,
       "stem": "fieldnam",
     },
     Object {
-      "kind": "Field.FieldTypeEnum",
+      "kind": Array [
+        "Field.FieldTypeEnum",
+      ],
       "name": "fieldType",
       "question": true,
       "stem": "fieldtyp",
     },
     Object {
-      "kind": "string",
+      "kind": Array [
+        "string",
+      ],
       "name": "indexAnalyzer",
       "question": true,
       "stem": "indexanalyz",
     },
     Object {
-      "kind": "string",
+      "kind": Array [
+        "string",
+      ],
       "name": "searchAnalyzer",
       "question": true,
       "stem": "searchanalyz",
     },
     Object {
-      "kind": "Field.SimilarityEnum",
+      "kind": Array [
+        "Field.SimilarityEnum",
+      ],
       "name": "similarity",
       "question": true,
       "stem": "similar",
@@ -94,55 +118,73 @@ Object {
   "name": "Example4",
   "structure": Array [
     Object {
-      "kind": "number",
+      "kind": Array [
+        "number",
+      ],
       "name": "minZoom",
       "question": true,
       "stem": "minzoom",
     },
     Object {
-      "kind": "number",
+      "kind": Array [
+        "number",
+      ],
       "name": "maxZoom",
       "question": true,
       "stem": "maxzoom",
     },
     Object {
-      "kind": "number",
+      "kind": Array [
+        "number",
+      ],
       "name": "radius",
       "question": true,
       "stem": "radiu",
     },
     Object {
-      "kind": "number",
+      "kind": Array [
+        "number",
+      ],
       "name": "extent",
       "question": true,
       "stem": "extent",
     },
     Object {
-      "kind": "number",
+      "kind": Array [
+        "number",
+      ],
       "name": "nodeSize",
       "question": true,
       "stem": "nodes",
     },
     Object {
-      "kind": "boolean",
+      "kind": Array [
+        "boolean",
+      ],
       "name": "log",
       "question": true,
       "stem": "log",
     },
     Object {
-      "kind": "(accumulated:any,props:any)=>void",
+      "kind": Array [
+        "(accumulated:any,props:any)=>void",
+      ],
       "name": "reduce",
       "question": true,
       "stem": "reduc",
     },
     Object {
-      "kind": "()=>any",
+      "kind": Array [
+        "()=>any",
+      ],
       "name": "initial",
       "question": true,
       "stem": "initi",
     },
     Object {
-      "kind": "(props:any)=>any",
+      "kind": Array [
+        "(props:any)=>any",
+      ],
       "name": "map",
       "question": true,
       "stem": "map",

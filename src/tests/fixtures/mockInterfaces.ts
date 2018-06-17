@@ -1,7 +1,7 @@
 export const example1 = `export interface Example1 {}`;
 
 export const example2 = `export interface Example2 {
-        requestId: number;
+        requestId: number | string[] | Pizza;
         orderedDependencies?: string[];
         dependencyUrls?: { [id: string]: string };
         javaScript?: string;

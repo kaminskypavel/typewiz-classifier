@@ -101,32 +101,32 @@ describe('#getPropertyKind', () => {
 		expect(getInterfaceProperties(example1).map((node) => getPropertyKind(node))).toEqual([]);
 
 		expect(getInterfaceProperties(example2).map((node) => getPropertyKind(node))).toEqual([
-			'number',
-			'string[]',
-			'{[id:string]:string}',
-			'string',
-			'any[]'
+			['number', 'string[]', 'Pizza'],
+			['string[]'],
+			['{[id:string]:string}'],
+			['string'],
+			['any[]']
 		]);
 
 		expect(getInterfaceProperties(example3).map((node) => getPropertyKind(node))).toEqual([
-			'boolean',
-			'string',
-			'Field.FieldTypeEnum',
-			'string',
-			'string',
-			'Field.SimilarityEnum'
+			['boolean'],
+			['string'],
+			['Field.FieldTypeEnum'],
+			['string'],
+			['string'],
+			['Field.SimilarityEnum']
 		]);
 
 		expect(getInterfaceProperties(example4).map((node) => getPropertyKind(node))).toEqual([
-			'number',
-			'number',
-			'number',
-			'number',
-			'number',
-			'boolean',
-			'(accumulated:any,props:any)=>void',
-			'()=>any',
-			'(props:any)=>any'
+			['number'],
+			['number'],
+			['number'],
+			['number'],
+			['number'],
+			['boolean'],
+			['(accumulated:any,props:any)=>void'],
+			['()=>any'],
+			['(props:any)=>any']
 		]);
 	});
 });

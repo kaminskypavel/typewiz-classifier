@@ -14,7 +14,7 @@ export interface IParsedInterface {
 
 export interface IParsedFeature {
 	name: string;
-	kind: string;
+	kind: string[];
 	question: boolean;
 	stem: string;
 }

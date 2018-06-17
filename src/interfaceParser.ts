@@ -27,7 +27,10 @@ export const getPropertyQuestion = (astNode: TSQueryNode<PropertySignature>) => 
 };
 
 export const getPropertyKind = (astNode: TSQueryNode<PropertySignature>) => {
-	return astNode.type!.getText().replace(/\s/g, '');
+	return astNode
+		.type!.getText()
+		.replace(/\s/g, '')
+		.split('|');
 };
 
 export const parseInterface = (delcaration: string) => {
