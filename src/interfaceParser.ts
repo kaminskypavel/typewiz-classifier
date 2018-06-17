@@ -7,7 +7,7 @@ export const sanitizeDeclaration = (delcaration: string) => {
 	}
 
 	// remove comments
-	res = delcaration.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '');
+	res = res.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '');
 
 	return res;
 };
