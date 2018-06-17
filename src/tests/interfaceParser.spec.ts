@@ -1,4 +1,4 @@
-import {sanitizeDeclaration} from './interfaceParser';
+import {sanitizeDeclaration} from './../interfaceParser';
 
 describe('#sanitizeDeclaration', () => {
 	it('should remove the word "export"', () => {
