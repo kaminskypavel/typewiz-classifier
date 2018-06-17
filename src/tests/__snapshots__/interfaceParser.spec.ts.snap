@@ -1,18 +1,152 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#sanitizeDeclaration should should remove comments 1`] = `
-"interface Field {
-        
-        allowSort?: boolean;
-        
-        fieldName: string;
-        
-        fieldType?: Field.FieldTypeEnum;
-        
-        indexAnalyzer?: string;
-        
-        searchAnalyzer?: string;
-        
-        similarity?: Field.SimilarityEnum;
-    }"
+exports[`#parseInterface should parse the interfaces correctly: example1 1`] = `
+Object {
+  "name": "Example1",
+  "structure": Array [],
+}
+`;
+
+exports[`#parseInterface should parse the interfaces correctly: example2 1`] = `
+Object {
+  "name": "Example2",
+  "structure": Array [
+    Object {
+      "kind": "number",
+      "name": "requestId",
+      "question": false,
+      "stem": "requestid",
+    },
+    Object {
+      "kind": "string[]",
+      "name": "orderedDependencies",
+      "question": true,
+      "stem": "ordereddepend",
+    },
+    Object {
+      "kind": "{[id:string]:string}",
+      "name": "dependencyUrls",
+      "question": true,
+      "stem": "dependencyurl",
+    },
+    Object {
+      "kind": "string",
+      "name": "javaScript",
+      "question": true,
+      "stem": "javascript",
+    },
+    Object {
+      "kind": "any[]",
+      "name": "paramValues",
+      "question": false,
+      "stem": "paramvalu",
+    },
+  ],
+}
+`;
+
+exports[`#parseInterface should parse the interfaces correctly: example3 1`] = `
+Object {
+  "name": "Example3",
+  "structure": Array [
+    Object {
+      "kind": "boolean",
+      "name": "allowSort",
+      "question": true,
+      "stem": "allowsort",
+    },
+    Object {
+      "kind": "string",
+      "name": "fieldName",
+      "question": false,
+      "stem": "fieldnam",
+    },
+    Object {
+      "kind": "Field.FieldTypeEnum",
+      "name": "fieldType",
+      "question": true,
+      "stem": "fieldtyp",
+    },
+    Object {
+      "kind": "string",
+      "name": "indexAnalyzer",
+      "question": true,
+      "stem": "indexanalyz",
+    },
+    Object {
+      "kind": "string",
+      "name": "searchAnalyzer",
+      "question": true,
+      "stem": "searchanalyz",
+    },
+    Object {
+      "kind": "Field.SimilarityEnum",
+      "name": "similarity",
+      "question": true,
+      "stem": "similar",
+    },
+  ],
+}
+`;
+
+exports[`#parseInterface should parse the interfaces correctly: example4 1`] = `
+Object {
+  "name": "Example4",
+  "structure": Array [
+    Object {
+      "kind": "number",
+      "name": "minZoom",
+      "question": true,
+      "stem": "minzoom",
+    },
+    Object {
+      "kind": "number",
+      "name": "maxZoom",
+      "question": true,
+      "stem": "maxzoom",
+    },
+    Object {
+      "kind": "number",
+      "name": "radius",
+      "question": true,
+      "stem": "radiu",
+    },
+    Object {
+      "kind": "number",
+      "name": "extent",
+      "question": true,
+      "stem": "extent",
+    },
+    Object {
+      "kind": "number",
+      "name": "nodeSize",
+      "question": true,
+      "stem": "nodes",
+    },
+    Object {
+      "kind": "boolean",
+      "name": "log",
+      "question": true,
+      "stem": "log",
+    },
+    Object {
+      "kind": "(accumulated:any,props:any)=>void",
+      "name": "reduce",
+      "question": true,
+      "stem": "reduc",
+    },
+    Object {
+      "kind": "()=>any",
+      "name": "initial",
+      "question": true,
+      "stem": "initi",
+    },
+    Object {
+      "kind": "(props:any)=>any",
+      "name": "map",
+      "question": true,
+      "stem": "map",
+    },
+  ],
+}
 `;

@@ -24,6 +24,7 @@
   "dependencies": {
     "@phenomnomnominal/tsquery": "^2.0.0-beta.4",
     "@types/progress": "^2.0.1",
+    "@types/stemmer": "^1.0.1",
     "chalk": "^2.4.1",
     "ejs": "^2.6.1",
     "es6-promise": "^4.2.4",
@@ -35,6 +36,7 @@
     "mongoose": "^5.1.5",
     "numeral": "^2.0.6",
     "progress": "^2.0.0",
+    "stemmer": "^1.0.2",
     "typescript": "^2.8.3"
   },
   "devDependencies": {
