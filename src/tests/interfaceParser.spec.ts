@@ -6,14 +6,15 @@ import {
 	getPropertyQuestion,
 	parseInterface
 } from '../interfaceParser';
-import {example1, example2, example3, example4} from './fixtures/mockInterfaces';
+import {example1, example2, example3, example4, example5} from './fixtures/mockInterfaces';
 
 describe('#getInterfaceName', () => {
 	it('should return the interface name', () => {
-		expect(getInterfaceName(example1)).toBe('Example1');
-		expect(getInterfaceName(example2)).toBe('Example2');
-		expect(getInterfaceName(example3)).toBe('Example3');
-		expect(getInterfaceName(example4)).toBe('Example4');
+		expect(getInterfaceName(example1)).toBe('IExample1');
+		expect(getInterfaceName(example2)).toBe('IExample2');
+		expect(getInterfaceName(example3)).toBe('IExample3');
+		expect(getInterfaceName(example4)).toBe('IExample4');
+		expect(getInterfaceName(example5)).toBe('IIexample5');
 	});
 });
 

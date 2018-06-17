@@ -7,8 +7,20 @@ import stemmer = require('stemmer');
 
 export const getInterfaceName = (delcaration: string) => {
 	const ast = tsquery.ast(delcaration);
-	const result = _.first(tsquery<Identifier>(ast, 'InterfaceDeclaration > Identifier')) as TSQueryNode<Identifier>;
-	return result.name;
+	const node = _.first(tsquery<Identifier>(ast, 'InterfaceDeclaration > Identifier')) as TSQueryNode<Identifier>;
+	let text = node.name;
+
+	if (text) {
+		const firstChar = text.charAt(0);
+		// make sure interfaces always start with a capital letter
+		text = _.capitalize(text);
+		// lets mark all the interfaces names with a capital I
+		if (firstChar !== 'I') {
+			text = `I${text}`;
+		}
+	}
+
+	return text;
 };
 
 export const getInterfaceProperties = (delcaration: string) => {

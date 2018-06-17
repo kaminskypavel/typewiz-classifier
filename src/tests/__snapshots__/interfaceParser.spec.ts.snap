@@ -2,14 +2,14 @@
 
 exports[`#parseInterface should parse the interfaces correctly: example1 1`] = `
 Object {
-  "name": "Example1",
+  "name": "IExample1",
   "structure": Array [],
 }
 `;
 
 exports[`#parseInterface should parse the interfaces correctly: example2 1`] = `
 Object {
-  "name": "Example2",
+  "name": "IExample2",
   "structure": Array [
     Object {
       "kind": Array [
@@ -59,7 +59,7 @@ Object {
 
 exports[`#parseInterface should parse the interfaces correctly: example3 1`] = `
 Object {
-  "name": "Example3",
+  "name": "IExample3",
   "structure": Array [
     Object {
       "kind": Array [
@@ -115,7 +115,7 @@ Object {
 
 exports[`#parseInterface should parse the interfaces correctly: example4 1`] = `
 Object {
-  "name": "Example4",
+  "name": "IExample4",
   "structure": Array [
     Object {
       "kind": Array [
