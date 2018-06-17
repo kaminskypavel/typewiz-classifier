@@ -37,3 +37,4 @@ build/
 /src/config/all.json
 
 typescript-interfaces.json
+log/**

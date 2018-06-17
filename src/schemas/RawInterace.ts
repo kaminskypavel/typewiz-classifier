@@ -7,7 +7,7 @@ export const RawInterfaceSchema: Schema = new Schema({
 	githubId: String,
 	declaration: {
 		raw: String,
-		json: {}
+		parsed: {}
 	},
 	paths: [String]
 });
