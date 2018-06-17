@@ -1,13 +1,44 @@
-export const sanitizeDeclaration = (delcaration: string) => {
-	let res = delcaration;
+import {tsquery} from '@phenomnomnominal/tsquery';
+import {Identifier, PropertySignature} from 'typescript';
+import * as _ from 'lodash';
+import {TSQueryNode} from '@phenomnomnominal/tsquery/dist/src/tsquery-types';
+import {IParsedInterface} from './models/Interfaces';
+import stemmer = require('stemmer');
 
-	// remove export keyword
-	if (delcaration.indexOf('export') === 0) {
-		res = delcaration.substring(7, delcaration.length);
-	}
+export const getInterfaceName = (delcaration: string) => {
+	const ast = tsquery.ast(delcaration);
+	const result = _.first(tsquery<Identifier>(ast, 'InterfaceDeclaration > Identifier')) as TSQueryNode<Identifier>;
+	return result.name;
+};
 
-	// remove comments
-	res = res.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '');
+export const getInterfaceProperties = (delcaration: string) => {
+	const ast = tsquery.ast(delcaration);
+	return tsquery<PropertySignature>(ast, 'InterfaceDeclaration > PropertySignature') as Array<
+		TSQueryNode<PropertySignature>
+	>;
+};
 
-	return res;
+export const getPropertyName = (astNode: TSQueryNode<PropertySignature>) => {
+	return astNode.name.getText();
+};
+
+export const getPropertyQuestion = (astNode: TSQueryNode<PropertySignature>) => {
+	return !!astNode.questionToken;
+};
+
+export const getPropertyKind = (astNode: TSQueryNode<PropertySignature>) => {
+	return astNode.type!.getText().replace(/\s/g, '');
+};
+
+export const parseInterface = (delcaration: string) => {
+	return {
+		name: getInterfaceName(delcaration),
+		structure: getInterfaceProperties(delcaration).map((prop) => {
+			const name = getPropertyName(prop);
+			const kind = getPropertyKind(prop);
+			const question = getPropertyQuestion(prop);
+			const stem = stemmer(name);
+			return {name, kind, question, stem};
+		})
+	} as IParsedInterface;
 };

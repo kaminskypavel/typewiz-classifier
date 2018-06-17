@@ -9,13 +9,12 @@ export interface Interfaces {
 
 export interface IParsedInterface {
 	name: string;
-	structure: {
-		[key: string]: IParsedInterface | IParsedFeature;
-	};
+	structure: [IParsedInterface | IParsedFeature];
 }
 
 export interface IParsedFeature {
 	name: string;
+	kind: string;
+	question: boolean;
 	stem: string;
-	optional: boolean;
 }
