@@ -124,9 +124,9 @@ describe('#getPropertyKind', () => {
 			['number'],
 			['number'],
 			['boolean'],
-			['(accumulated:any,props:any)=>void'],
-			['()=>any'],
-			['(props:any)=>any']
+			['Function'],
+			['Function'],
+			['Function']
 		]);
 	});
 });
