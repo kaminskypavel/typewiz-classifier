@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#sanitizeDeclaration should should remove comments 1`] = `
+"interface Field {
+        
+        allowSort?: boolean;
+        
+        fieldName: string;
+        
+        fieldType?: Field.FieldTypeEnum;
+        
+        indexAnalyzer?: string;
+        
+        searchAnalyzer?: string;
+        
+        similarity?: Field.SimilarityEnum;
+    }"
+`;
