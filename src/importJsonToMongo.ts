@@ -37,19 +37,17 @@ const getDbConnection = async () => {
 		bar.tick(datasetEntry.length + 2);
 
 		// tslint:disable-next-line
-		const {id: _id, interface: declarationRaw, path} = JSON.parse(datasetEntry);
+		const {id: githubId, interface: declarationRaw, path} = JSON.parse(datasetEntry);
 		const paths = path.map((p: string) => `http://github.com/${p}`);
-		await RawInterface.findOneAndUpdate(
-			{_id},
-			{
-				_id,
-				declaration: {
-					raw: declarationRaw
-				},
-				paths
+		const rawInterface = new RawInterface({
+			githubId,
+			declaration: {
+				raw: declarationRaw
 			},
-			{upsert: true}
-		);
+			paths
+		});
+
+		await rawInterface.save();
 	});
 
 	lineReader.on('close', async () => {

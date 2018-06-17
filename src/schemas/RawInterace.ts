@@ -1,10 +1,10 @@
 import {Document, Model, model, Schema} from 'mongoose';
-import {IRawInterface} from '../models/IRawInterface';
+import {Interfaces} from '../models/Interfaces';
 
-export interface IRawInterfaceModel extends IRawInterface, Document {}
+export interface IRawInterfaceModel extends Interfaces, Document {}
 
 export const RawInterfaceSchema: Schema = new Schema({
-	_id: String,
+	githubId: String,
 	declaration: {
 		raw: String,
 		json: {}
