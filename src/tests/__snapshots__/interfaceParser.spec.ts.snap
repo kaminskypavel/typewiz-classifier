@@ -167,7 +167,7 @@ Object {
     },
     Object {
       "kind": Array [
-        "(accumulated:any,props:any)=>void",
+        "Function",
       ],
       "name": "reduce",
       "question": true,
@@ -175,7 +175,7 @@ Object {
     },
     Object {
       "kind": Array [
-        "()=>any",
+        "Function",
       ],
       "name": "initial",
       "question": true,
@@ -183,7 +183,7 @@ Object {
     },
     Object {
       "kind": Array [
-        "(props:any)=>any",
+        "Function",
       ],
       "name": "map",
       "question": true,

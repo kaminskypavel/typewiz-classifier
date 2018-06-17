@@ -30,7 +30,10 @@ export const getPropertyKind = (astNode: TSQueryNode<PropertySignature>) => {
 	return astNode
 		.type!.getText()
 		.replace(/\s/g, '')
-		.split('|');
+		.split('|')
+		.map((kind) => {
+			return kind.includes('=>') ? 'Function' : kind;
+		});
 };
 
 export const parseInterface = (delcaration: string) => {
