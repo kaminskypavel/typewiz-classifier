@@ -5,6 +5,7 @@ import {createReadStream} from 'fs';
 import {RawInterface} from './schemas/RawInterace';
 import * as ProgressBar from 'progress';
 import {parseInterface} from './interfaceParser';
+import * as _ from 'lodash';
 
 const getDbConnection = async () => {
 	const mongoUrl = 'mongodb://localhost:27017/typewiz_classifier';
@@ -60,12 +61,12 @@ const getDbConnection = async () => {
 	});
 
 	lineReader.on('close', async () => {
-		console.log('Done');
+		console.log('Done Importing');
 		mongoose.connection.close();
 		bar.update(1);
 		const totalCount = parseErrorCount + parseSuccessCount;
-		console.log(`Statistics : Errors (Skipped) : 
-		${parseErrorCount} (${parseErrorCount / totalCount}) | Success (Inserted) ${parseSuccessCount} (${parseErrorCount /
-			totalCount})`);
+		console.log(`Statistics : 
+		Errors (Skipped) : ${parseErrorCount} (${_.round(100 * parseErrorCount / totalCount, 2)}) 
+		Success (Inserted) ${parseSuccessCount} (${_.round(100 * parseSuccessCount / totalCount, 2)})`);
 	});
 })();
