@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "ts-node- src/importJsonToMongo.ts",
+    "start": "ts-node-dev src/importJsonToMongo.ts",
     "format": "prettier --write src/**/*.{json,ts}",
     "lint": "tslint --project .",
     "test": "yarn lint",
@@ -31,6 +31,7 @@
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
     "moment": "^2.22.1",
+    "mongoose": "^5.1.5",
     "numeral": "^2.0.6",
     "typescript": "^2.8.3"
   },
@@ -41,6 +42,8 @@
     "@types/jest": "^23.1.0",
     "@types/lodash": "^4.14.108",
     "@types/mkdirp": "^0.5.2",
+    "@types/mongodb": "^3.0.20",
+    "@types/mongoose": "^5.0.16",
     "@types/node": "~9.6.2",
     "@types/node-fetch": "^1.6.9",
     "@types/numeral": "^0.0.22",
