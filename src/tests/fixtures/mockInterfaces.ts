@@ -64,5 +64,3 @@ export const example4 = `export interface Example4 {
      */
     map?: (props: any) => any;
 }`;
-
-export const example5 = `interface iexample5 {}`;
