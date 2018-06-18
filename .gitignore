@@ -27,7 +27,7 @@ build/
 
 /dist/
 !/output/.gitkeep
-/output/*
+/output/*.csv
 /data/*.csv
 
 *.csv

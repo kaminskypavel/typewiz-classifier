@@ -5,7 +5,9 @@ import * as ProgressBar from 'progress';
 import {createInterface} from 'readline';
 import {parseInterface} from './interfaceParser';
 
-const output = fs.createWriteStream('output.csv', {encoding: 'utf8'});
+const allCsvStream = fs.createWriteStream('output/output.csv', {encoding: 'utf8'});
+const featuresCsvStream = fs.createWriteStream('output/features.csv', {encoding: 'utf8'});
+const intrefacsCsvStream = fs.createWriteStream('output/interfaces.csv', {encoding: 'utf8'});
 
 (async () => {
 	const {size: totalSize} = await fs.statSync('typescript-interfaces.json');
@@ -28,7 +30,8 @@ const output = fs.createWriteStream('output.csv', {encoding: 'utf8'});
 
 		// tslint:disable-next-line
 		const {id: githubId, interface: declarationRaw, path} = JSON.parse(datasetEntry);
-		const paths = path.map((p: string) => `http://github.com/${p}`);
+
+		// const paths = path.map((p: string) => `http://github.com/${p}`);
 		try {
 			const {name, structure} = parseInterface(declarationRaw);
 			const parametersName = structure
@@ -36,7 +39,10 @@ const output = fs.createWriteStream('output.csv', {encoding: 'utf8'});
 					return param.stem;
 				})
 				.join(',');
-			output.write(`${name},${parametersName}\r\n`);
+
+			allCsvStream.write(`${name},${parametersName}\r\n`);
+			featuresCsvStream.write(`${parametersName},`);
+			intrefacsCsvStream.write(`${name},`);
 
 			parseSuccessCount++;
 		} catch (e) {
@@ -47,8 +53,9 @@ const output = fs.createWriteStream('output.csv', {encoding: 'utf8'});
 	lineReader.on('close', async () => {
 		console.log('Done Importing');
 		bar.update(1);
-		output.end();
+		allCsvStream.end();
 		const totalCount = parseErrorCount + parseSuccessCount;
+
 		console.log(`Statistics : 
 		Errors (Skipped) : ${parseErrorCount} (${_.round(100 * parseErrorCount / totalCount, 2)}) 
 		Success (Inserted) ${parseSuccessCount} (${_.round(100 * parseSuccessCount / totalCount, 2)})`);

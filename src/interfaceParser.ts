@@ -12,12 +12,14 @@ export const getInterfaceName = (delcaration: string) => {
 
 	if (text) {
 		const firstChar = text.charAt(0);
+
 		// make sure interfaces always start with a capital letter
-		text = _.capitalize(text);
 		// lets mark all the interfaces names with a capital I
-		if (firstChar !== 'I') {
-			text = `I${text}`;
+		if (firstChar.toUpperCase() === 'I') {
+			text = text.substring(1, text.length);
 		}
+
+		return `I${_.capitalize(text)}`;
 	}
 
 	return text;
