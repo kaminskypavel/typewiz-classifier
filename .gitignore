@@ -6,12 +6,6 @@ npm-debug.log*
 # Dependencies
 node_modules/
 
-# Coverage
-coverage
-
-# Transpiled files
-build/
-
 # VS Code
 .vscode
 !.vscode/tasks.js
@@ -19,22 +13,7 @@ build/
 # JetBrains IDEs
 .idea/
 
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-/dist/
-!/output/.gitkeep
-/output/*.csv
-/data/*.csv
-
-*.csv
-*.cache.json
-
-/src/config/config.json
-/src/config/all.json
 
 typescript-interfaces.json
 log/**
+preprocessing/output/*.csv
