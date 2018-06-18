@@ -29,7 +29,6 @@
     "chalk": "^2.4.1",
     "ejs": "^2.6.1",
     "es6-promise": "^4.2.4",
-    "husky": "^1.0.0-rc.6",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
@@ -74,12 +73,6 @@
       "json",
       "node"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn format && yarn test"
-    }
   },
   "lint-staged": {
     "src/**/*.{js,json}": [
