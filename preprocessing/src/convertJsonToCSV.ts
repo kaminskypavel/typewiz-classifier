@@ -5,12 +5,15 @@ import * as ProgressBar from 'progress';
 import {createInterface} from 'readline';
 import {parseInterface} from './interfaceParser';
 
-const allCsvStream = fs.createWriteStream('output/output.csv', {encoding: 'utf8'});
-const featuresCsvStream = fs.createWriteStream('output/features.csv', {encoding: 'utf8'});
-const intrefacsCsvStream = fs.createWriteStream('output/interfaces.csv', {encoding: 'utf8'});
+const allCsvStream = fs.createWriteStream('../output/output.csv', {encoding: 'utf8'});
+const featuresCsvStream = fs.createWriteStream('../output/features.csv', {encoding: 'utf8'});
+const intrefacsCsvStream = fs.createWriteStream('../output/interfaces.csv', {encoding: 'utf8'});
+const inputPath = `${__dirname}/../../typescript-interfaces.json`;
 
 (async () => {
-	const {size: totalSize} = await fs.statSync('typescript-interfaces.json');
+	console.log('loading from : ', inputPath);
+
+	const {size: totalSize} = await fs.statSync(inputPath);
 	const bar = new ProgressBar('Analyzing Interfaces [:bar] :rate/bps :percent :etas', {
 		complete: '=',
 		incomplete: ' ',
@@ -19,7 +22,7 @@ const intrefacsCsvStream = fs.createWriteStream('output/interfaces.csv', {encodi
 	});
 
 	const lineReader = createInterface({
-		input: createReadStream(`typescript-interfaces.json`)
+		input: createReadStream(inputPath)
 	});
 
 	let parseErrorCount = 0;
