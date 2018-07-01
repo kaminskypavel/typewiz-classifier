@@ -27,6 +27,7 @@ const inputPath = `${__dirname}/../../typescript-interfaces.json`;
 
 	let parseErrorCount = 0;
 	let parseSuccessCount = 0;
+	let skippedCount = 0;
 
 	lineReader.on('line', async (datasetEntry) => {
 		bar.tick(datasetEntry.length + 2);
@@ -43,11 +44,15 @@ const inputPath = `${__dirname}/../../typescript-interfaces.json`;
 				})
 				.join(',');
 
-			allCsvStream.write(`${name},${parametersName}\r\n`);
-			featuresCsvStream.write(`${parametersName},`);
-			intrefacsCsvStream.write(`${name},`);
-
-			parseSuccessCount++;
+			if (!_.isEmpty(parametersName)) {
+				allCsvStream.write(`${name},${parametersName}\n`);
+				featuresCsvStream.write(`${parametersName}\n`);
+				intrefacsCsvStream.write(`${name}\n`);
+				parseSuccessCount++;
+			}
+			else {
+				skippedCount++;
+			}
 		} catch (e) {
 			parseErrorCount++;
 		}
@@ -60,7 +65,8 @@ const inputPath = `${__dirname}/../../typescript-interfaces.json`;
 		const totalCount = parseErrorCount + parseSuccessCount;
 
 		console.log(`Statistics : 
-		Errors (Skipped) : ${parseErrorCount} (${_.round(100 * parseErrorCount / totalCount, 2)}) 
-		Success (Inserted) ${parseSuccessCount} (${_.round(100 * parseSuccessCount / totalCount, 2)})`);
+		Errors (Skipped)   : ${parseErrorCount} (${_.round(100 * parseErrorCount / totalCount, 2)}) 
+		Empty (Skipped)    : ${skippedCount} (${_.round(100 * skippedCount / totalCount, 2)}) 
+		Success (Inserted) : ${parseSuccessCount} (${_.round(100 * parseSuccessCount / totalCount, 2)})`);
 	});
 })();

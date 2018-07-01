@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc",
     "start:mongo": "ts-node-dev src/importJsonToMongo.ts",
-    "start:csv": "ts-node-dev src/convertJsonToCSV.ts",
+    "start:csv": "start cmd /k ts-node-dev src/convertJsonToCSV.ts",
     "format": "prettier --write src/**/*.{json,ts}",
     "lint": "tslint --project .",
     "test": "yarn lint",
