@@ -16,4 +16,6 @@ node_modules/
 
 typescript-interfaces.json
 log/**
-preprocessing/output/*.csv
+output/**/*.csv
+
+demo
