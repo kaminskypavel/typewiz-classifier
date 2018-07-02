@@ -19,6 +19,8 @@ describe('#getInterfaceName', () => {
 		expect(getInterfaceName('interface IExample {}')).toBe('IExample');
 		expect(getInterfaceName('interface iExample {}')).toBe('IExample');
 		expect(getInterfaceName('interface iexample {}')).toBe('IExample');
+		expect(getInterfaceName('interface IReducerInterface {}')).toBe('IReducerInterface');
+		expect(getInterfaceName('interface reducer_interface {}')).toBe('IReducerInterface');
 	});
 });
 

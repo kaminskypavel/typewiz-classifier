@@ -18,8 +18,8 @@ export const getInterfaceName = (delcaration: string) => {
 		if (firstChar.toUpperCase() === 'I') {
 			text = text.substring(1, text.length);
 		}
-
-		return `I${_.capitalize(text)}`;
+		const secondChar = text.charAt(0);
+		return `I${secondChar.toUpperCase()}${_.camelCase(text.substring(1))}`;
 	}
 
 	return text;
