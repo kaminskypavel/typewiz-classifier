@@ -62,7 +62,7 @@ const inputPath = `${__dirname}/../../typescript-interfaces.json`;
 		console.log('Done Importing');
 		bar.update(1);
 		allCsvStream.end();
-		const totalCount = parseErrorCount + parseSuccessCount;
+		const totalCount = parseErrorCount + parseSuccessCount + skippedCount;
 
 		console.log(`Statistics : 
 		Errors (Skipped)   : ${parseErrorCount} (${_.round(100 * parseErrorCount / totalCount, 2)}) 
