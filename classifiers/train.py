@@ -10,20 +10,20 @@ with open('./../output/features.csv', encoding="utf8") as file:
 
 # build a corpus
 dictionary = gensim.corpora.Dictionary(gen_docs)
-dictionary.save(fname_or_handle="./model/dict.data")
+dictionary.save(fname_or_handle="./../output/model/dict.data")
 print("saved to dictionary")
 
 corpus = [dictionary.doc2bow(gen_doc) for gen_doc in gen_docs]
 tf_idf = gensim.models.TfidfModel(corpus)
-tf_idf.save(fname_or_handle='./model/tf_idf.model')
+tf_idf.save(fname_or_handle='./../output/model/tf_idf.model')
 print("saved to corpus")
 
 print("loaded %d in the dictionary" % len(dictionary))
 print("model size : %s" % tf_idf)
 
 # similarity measure object in tf-idf space.
-sims = gensim.similarities.Similarity('./tmp/',
+sims = gensim.similarities.Similarity('./../output/model/matrix/',
 									  tf_idf[corpus],
 									  num_features=len(dictionary))
-sims.save(fname="./model/similarity.matrix")
+sims.save(fname="./../output/model/similarity.matrix")
 print("saved to similarity matrix")
