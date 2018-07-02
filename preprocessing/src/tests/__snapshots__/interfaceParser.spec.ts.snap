@@ -17,41 +17,41 @@ Object {
         "string[]",
         "Pizza",
       ],
-      "name": "requestId",
+      "name": "request_id",
       "question": false,
-      "stem": "requestid",
+      "stem": "request_id",
     },
     Object {
       "kind": Array [
         "string[]",
       ],
-      "name": "orderedDependencies",
+      "name": "ordered_dependencies",
       "question": true,
-      "stem": "ordereddepend",
+      "stem": "ordered_depend",
     },
     Object {
       "kind": Array [
         "{[id:string]:string}",
       ],
-      "name": "dependencyUrls",
+      "name": "dependency_urls",
       "question": true,
-      "stem": "dependencyurl",
+      "stem": "dependency_url",
     },
     Object {
       "kind": Array [
         "string",
       ],
-      "name": "javaScript",
+      "name": "java_script",
       "question": true,
-      "stem": "javascript",
+      "stem": "java_script",
     },
     Object {
       "kind": Array [
         "any[]",
       ],
-      "name": "paramValues",
+      "name": "param_values",
       "question": false,
-      "stem": "paramvalu",
+      "stem": "param_valu",
     },
   ],
 }
@@ -65,41 +65,41 @@ Object {
       "kind": Array [
         "boolean",
       ],
-      "name": "allowSort",
+      "name": "allow_sort",
       "question": true,
-      "stem": "allowsort",
+      "stem": "allow_sort",
     },
     Object {
       "kind": Array [
         "string",
       ],
-      "name": "fieldName",
+      "name": "field_name",
       "question": false,
-      "stem": "fieldnam",
+      "stem": "field_nam",
     },
     Object {
       "kind": Array [
         "Field.FieldTypeEnum",
       ],
-      "name": "fieldType",
+      "name": "field_type",
       "question": true,
-      "stem": "fieldtyp",
+      "stem": "field_typ",
     },
     Object {
       "kind": Array [
         "string",
       ],
-      "name": "indexAnalyzer",
+      "name": "index_analyzer",
       "question": true,
-      "stem": "indexanalyz",
+      "stem": "index_analyz",
     },
     Object {
       "kind": Array [
         "string",
       ],
-      "name": "searchAnalyzer",
+      "name": "search_analyzer",
       "question": true,
-      "stem": "searchanalyz",
+      "stem": "search_analyz",
     },
     Object {
       "kind": Array [
@@ -121,17 +121,17 @@ Object {
       "kind": Array [
         "number",
       ],
-      "name": "minZoom",
+      "name": "min_zoom",
       "question": true,
-      "stem": "minzoom",
+      "stem": "min_zoom",
     },
     Object {
       "kind": Array [
         "number",
       ],
-      "name": "maxZoom",
+      "name": "max_zoom",
       "question": true,
-      "stem": "maxzoom",
+      "stem": "max_zoom",
     },
     Object {
       "kind": Array [
@@ -153,9 +153,9 @@ Object {
       "kind": Array [
         "number",
       ],
-      "name": "nodeSize",
+      "name": "node_size",
       "question": true,
-      "stem": "nodes",
+      "stem": "node_s",
     },
     Object {
       "kind": Array [

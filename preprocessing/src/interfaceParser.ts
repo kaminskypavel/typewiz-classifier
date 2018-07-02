@@ -33,7 +33,7 @@ export const getInterfaceProperties = (delcaration: string) => {
 };
 
 export const getPropertyName = (astNode: TSQueryNode<PropertySignature>) => {
-	return astNode.name.getText();
+	return _.snakeCase(astNode.name.getText())
 };
 
 export const getPropertyQuestion = (astNode: TSQueryNode<PropertySignature>) => {

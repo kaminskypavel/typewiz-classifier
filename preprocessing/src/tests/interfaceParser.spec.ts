@@ -6,7 +6,7 @@ import {
 	getPropertyQuestion,
 	parseInterface
 } from '../interfaceParser';
-import {example1, example2, example3, example4} from './fixtures/mockInterfaces';
+import {example1, example2, example3, example4, example5} from './fixtures/mockInterfaces';
 
 describe('#getInterfaceName', () => {
 	it('should return the interface name', () => {
@@ -38,34 +38,40 @@ describe('#getPropertyName', () => {
 		expect(getInterfaceProperties(example1).map((node) => getPropertyName(node))).toEqual([]);
 
 		expect(getInterfaceProperties(example2).map((node) => getPropertyName(node))).toEqual([
-			'requestId',
-			'orderedDependencies',
-			'dependencyUrls',
-			'javaScript',
-			'paramValues'
+			'request_id',
+			'ordered_dependencies',
+			'dependency_urls',
+			'java_script',
+			'param_values'
 		]);
 
 		expect(getInterfaceProperties(example3).map((node) => getPropertyName(node))).toEqual([
-			'allowSort',
-			'fieldName',
-			'fieldType',
-			'indexAnalyzer',
-			'searchAnalyzer',
+			'allow_sort',
+			'field_name',
+			'field_type',
+			'index_analyzer',
+			'search_analyzer',
 			'similarity'
 		]);
 
 		expect(getInterfaceProperties(example4).map((node) => getPropertyName(node))).toEqual([
-			'minZoom',
-			'maxZoom',
+			'min_zoom',
+			'max_zoom',
 			'radius',
 			'extent',
-			'nodeSize',
+			'node_size',
 			'log',
 			'reduce',
 			'initial',
 			'map'
 		]);
 	});
+
+	expect(getInterfaceProperties(example5).map((node) => getPropertyName(node))).toEqual([
+		"first_name",
+		"last_name"
+	]);
+
 });
 
 describe('#getPropertyQuestion', () => {
