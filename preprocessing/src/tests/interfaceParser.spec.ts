@@ -38,28 +38,28 @@ describe('#getPropertyName', () => {
 		expect(getInterfaceProperties(example1).map((node) => getPropertyName(node))).toEqual([]);
 
 		expect(getInterfaceProperties(example2).map((node) => getPropertyName(node))).toEqual([
-			'request_id',
-			'ordered_dependencies',
-			'dependency_urls',
-			'java_script',
-			'param_values'
+			'requestid',
+			'ordereddependencies',
+			'dependencyurls',
+			'javascript',
+			'paramvalues'
 		]);
 
 		expect(getInterfaceProperties(example3).map((node) => getPropertyName(node))).toEqual([
-			'allow_sort',
-			'field_name',
-			'field_type',
-			'index_analyzer',
-			'search_analyzer',
+			'allowsort',
+			'fieldname',
+			'fieldtype',
+			'indexanalyzer',
+			'searchanalyzer',
 			'similarity'
 		]);
 
 		expect(getInterfaceProperties(example4).map((node) => getPropertyName(node))).toEqual([
-			'min_zoom',
-			'max_zoom',
+			'minzoom',
+			'maxzoom',
 			'radius',
 			'extent',
-			'node_size',
+			'nodesize',
 			'log',
 			'reduce',
 			'initial',
@@ -68,8 +68,8 @@ describe('#getPropertyName', () => {
 	});
 
 	expect(getInterfaceProperties(example5).map((node) => getPropertyName(node))).toEqual([
-		"first_name",
-		"last_name"
+		"firstname",
+		"lastname"
 	]);
 
 });

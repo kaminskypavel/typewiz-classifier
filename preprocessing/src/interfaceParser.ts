@@ -27,13 +27,11 @@ export const getInterfaceName = (delcaration: string) => {
 
 export const getInterfaceProperties = (delcaration: string) => {
 	const ast = tsquery.ast(delcaration);
-	return tsquery<PropertySignature>(ast, 'InterfaceDeclaration > PropertySignature') as Array<
-		TSQueryNode<PropertySignature>
-	>;
+	return tsquery<PropertySignature>(ast, 'InterfaceDeclaration > PropertySignature') as Array<TSQueryNode<PropertySignature>>;
 };
 
 export const getPropertyName = (astNode: TSQueryNode<PropertySignature>) => {
-	return _.snakeCase(astNode.name.getText())
+	return _.snakeCase(astNode.name.getText()).replace("_", '')
 };
 
 export const getPropertyQuestion = (astNode: TSQueryNode<PropertySignature>) => {
