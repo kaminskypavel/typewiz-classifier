@@ -64,3 +64,6 @@ export const example4 = `export interface Example4 {
      */
     map?: (props: any) => any;
 }`;
+
+export const example5 = `export interface example5 { first_name:string; lastName:string}`;
+
