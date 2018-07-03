@@ -3,7 +3,20 @@ import inflection
 import pandas as pd
 from nltk.stem import PorterStemmer
 
-query = "lastname first_name age"
+# "modal title color" => IAlertOptions
+# "x y" => IPoint
+# "x y radius" => ICircleProps
+# "thumbnail_url thumbnail_width thumbnail_height" => IGetThumbnailOptions
+# "url width height" => IMageProps
+# "headers status body" => IResponse
+# "href search path host hostname port" => IUrl
+# "then catch" => IPromise
+# "suit rank" => ICard
+# "model year price" => ICar
+# "items total" => IPageableResult
+# "amount date quantity" => IAccountTransactionInformation
+
+query = "amount date quantity"
 
 # tokenize and stemm the input query.
 ps = PorterStemmer()
